@@ -15,8 +15,8 @@ import { Component } from '@angular/core';
     
                     <nav>
                         
-                        <a class="portfolioClass" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-                        <a class="grafikonClass" routerLink="/grafikon" routerLinkActive="active">Grafikon</a>
+                        <a  routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+                        <a  routerLink="/grafikon" routerLinkActive="active">Grafikon</a>
                     </nav>
                 <main id="content">
                 <router-outlet></router-outlet>
