@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `<div>
                 <header><h1>Helloo {{name}}</h1>
-                      <div id="menu" style="clear:both:width:100%;text-align:left"> <label for="showblock">Menu</label></div>  
+                      <div id="menu" style="clear:both:width:100%;text-align:left;background:url('images/menu.png') 3px 1px no-repeat"> 
+                      <label for="showblock"><span>&#9776; Menu</span></label>
+                      </div>  
                 </header>
                       
                         
@@ -13,8 +15,8 @@ import { Component } from '@angular/core';
     
                     <nav>
                         
-                        <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-                        <a routerLink="/grafikon" routerLinkActive="active">Grafikon</a>
+                        <a class="portfolioClass" routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
+                        <a class="grafikonClass" routerLink="/grafikon" routerLinkActive="active">Grafikon</a>
                     </nav>
                 <main id="content">
                 <router-outlet></router-outlet>
