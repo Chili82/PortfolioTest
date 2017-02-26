@@ -91,7 +91,7 @@ header {
     margin:5px;
     padding:0;
     text-align:left;
-    width: 5%;
+    width: 2%;
 
     overflow: hidden;
     -webkit-transition: width 300ms linear;
@@ -142,9 +142,7 @@ nav a.active {
     font-weight: bold;
 }
 
-.portfolioClass {
- background:url('images/menu.png') no-repeat top left;
-}
+
 
 @media screen and (max-width: 768px) {
   .weather-list {
