@@ -32,8 +32,8 @@ import {productList} from './portfolio.service';
                   <td>{{item.position}}</td>
                   <td>{{item.closePrice}}</td>
                   <td>{{item.livePrice}}</td>
-                  <td>{{item.value}}</td>
-                  <td>{{item.pnl}}</td>
+                  <td>{{computeValue(item.position,item.livePrice)}}</td>
+                  <td>{{computePnl(item.position,item.livePrice,item.closePrice)}}</td>
                </tr>
             </tbody>
          </table>
@@ -48,13 +48,23 @@ export class PortfolioComponent {
 
 items : Portfolio[];
 inputName : string = '';
-
+y : number;
 constructor( ){
         
          this.items = productList;
        
    };
+computeValue(x:any, y:any){
+    
+    var z = x*y;
+    return z.toFixed(3);
+}
 
+computePnl(x:any, y:any, z:any){
+    
+    var t = x*(y-z);
+    return t.toFixed(3);
+}
     FilterBySecurity(){
       this.items = [];
 

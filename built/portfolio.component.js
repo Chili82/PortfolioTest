@@ -17,6 +17,14 @@ var PortfolioComponent = (function () {
         this.items = portfolio_service_1.productList;
     }
     ;
+    PortfolioComponent.prototype.computeValue = function (x, y) {
+        var z = x * y;
+        return z.toFixed(3);
+    };
+    PortfolioComponent.prototype.computePnl = function (x, y, z) {
+        var t = x * (y - z);
+        return t.toFixed(3);
+    };
     PortfolioComponent.prototype.FilterBySecurity = function () {
         var _this = this;
         this.items = [];
@@ -36,7 +44,7 @@ var PortfolioComponent = (function () {
 PortfolioComponent = __decorate([
     core_1.Component({
         selector: 'my-portfolio',
-        template: "\n<div class=\"form-group\">\n         <label><span class=\"glyphicon glyphicon-search\" aria-hidden=\"true\"></span></label>\n         <input placeholder=\"Search Security\"  type=\"text\" (keyup)=\"FilterBySecurity()\"  id=\"inputName\" [(ngModel)]=\"inputName\"/>\n\n   </div>\n    <div class=\"panel panel-default\">\n    <!-- Default panel contents -->\n    <div class='panel-heading'>Portfolio List</div>\n    <div class='panel-body'>\n        <table class=\"table table-bordered table-condensed \">\n            <thead>\n               <th>Security</th>\n               <th>ISIN</th>\n               <th>Position</th>\n               <th>Close price</th>\n               <th>Live price</th>\n               <th>Value</th>\n               <th>PnL</th>\n            </thead>\n            <tbody>\n               <tr *ngFor=\"let item of items\">\n                  <td>{{item.security}}</td>\n                  <td>{{item.ISIN}}</td>\n                  <td>{{item.position}}</td>\n                  <td>{{item.closePrice}}</td>\n                  <td>{{item.livePrice}}</td>\n                  <td>{{item.value}}</td>\n                  <td>{{item.pnl}}</td>\n               </tr>\n            </tbody>\n         </table>\n         </div>\n         </div>\n  \n"
+        template: "\n<div class=\"form-group\">\n         <label><span class=\"glyphicon glyphicon-search\" aria-hidden=\"true\"></span></label>\n         <input placeholder=\"Search Security\"  type=\"text\" (keyup)=\"FilterBySecurity()\"  id=\"inputName\" [(ngModel)]=\"inputName\"/>\n\n   </div>\n    <div class=\"panel panel-default\">\n    <!-- Default panel contents -->\n    <div class='panel-heading'>Portfolio List</div>\n    <div class='panel-body'>\n        <table class=\"table table-bordered table-condensed \">\n            <thead>\n               <th>Security</th>\n               <th>ISIN</th>\n               <th>Position</th>\n               <th>Close price</th>\n               <th>Live price</th>\n               <th>Value</th>\n               <th>PnL</th>\n            </thead>\n            <tbody>\n               <tr *ngFor=\"let item of items\">\n                  <td>{{item.security}}</td>\n                  <td>{{item.ISIN}}</td>\n                  <td>{{item.position}}</td>\n                  <td>{{item.closePrice}}</td>\n                  <td>{{item.livePrice}}</td>\n                  <td>{{computeValue(item.position,item.livePrice)}}</td>\n                  <td>{{computePnl(item.position,item.livePrice,item.closePrice)}}</td>\n               </tr>\n            </tbody>\n         </table>\n         </div>\n         </div>\n  \n"
     }),
     __metadata("design:paramtypes", [])
 ], PortfolioComponent);
