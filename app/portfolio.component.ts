@@ -6,7 +6,11 @@ import {productList} from './portfolio.service';
 @Component({
     selector: 'my-portfolio',
     template: `
+<div class="form-group">
+         <label><span class="glyphicon glyphicon-search" aria-hidden="true"></span></label>
+         <input placeholder="Search Security"  type="text" (keyup)="FilterBySecurity()"  id="inputName" [(ngModel)]="inputName"/>
 
+   </div>
     <div class="panel panel-default">
     <!-- Default panel contents -->
     <div class='panel-heading'>Portfolio List</div>
@@ -41,12 +45,28 @@ import {productList} from './portfolio.service';
 
 export class PortfolioComponent {
 
-filteredItems : Portfolio[];
+
 items : Portfolio[];
+inputName : string = '';
 
 constructor( ){
-         this.filteredItems = productList;
+        
          this.items = productList;
        
    };
+
+    FilterBySecurity(){
+      this.items = [];
+
+      if(this.inputName != ""){
+            productList.forEach(element => {
+                if(element.security.toUpperCase().indexOf(this.inputName.toUpperCase())>=0){
+                  this.items.push(element);
+               }
+            });
+      }else{
+         this.items = productList;
+      }
+    
+   }
 }
