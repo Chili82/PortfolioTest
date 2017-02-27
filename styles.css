@@ -6,125 +6,62 @@ body {
 }
 
 header {
-    clear: both;
-  background-color: #3498db;
-  padding: 10px;
+  clear: both;
+  padding: 5px;
   width: 100%;
   text-align: center;
   font-size: 15px;
-  color: #f1c40f;
+  color: #3498db;
 }
 
-.weather-list {
-  margin: 20px auto;
-  width: 40%;
-}
-
-.weather-element {
-  box-shadow: 1px 1px 6px #ccc;
-  padding: 10px;
-  margin: 10px 0;
-}
-
-.tooltip {
-  position: absolute;
+#menu{
+  clear:both;
+  width:100%;
+  text-align:left;
+  border:1px solid #3498db;
   padding: 3px;
-  font-size: 12px;
-  background-color: #eee;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  text-align: left;
+  overflow: auto;
+  font-size: 1.2em;
 }
-
-.temperature {
-  cursor: default;
-}
-
-.info {
-  color: rgba(95, 95, 95, 0.51);
-  font-weight: bold;
-}
-
-.tempInfo {
-    clear: both;
-}
-
-.weather-search {
-    margin: 20px auto;
-    width: 40%;
-    text-align: center;
-}
-  label {
-    font-weight: bold;
-    margin-right: 20px;
-  }
-
-  button, input {
-    font-size: inherit;
-    font-family: inherit;
-  }
-
-  input {
-    padding: 3px 5px;
-    outline: none;
-    width: 50%;
-    margin-right: 20px;
-  }
-
-  button {
-    background-color: #2ecc71;
-    border: none;
-    padding: 4px 8px;
-    box-shadow: 1px 1px 1px #95a5a6;
-    cursor: pointer;
-    color: white;
-  }
-
-  button:hover {
-    background-color: #27ae60;
-  }
-
   nav {
     float: left;
-    border:1px solid #f1c40f;
+    border:1px solid #3498db;
     list-style:none;
-    margin:5px;
-    padding:0;
+    padding:3px;
     text-align:left;
-    width: 2%;
-
+    width: 30px;
+   margin-left:5px;
     overflow: hidden;
     -webkit-transition: width 300ms linear;
     -moz-transition: width 300ms linear;
     -o-transition: width 300ms linear;
     transition: width 300ms linear;
+    font-size: 1.1em;
   }
   #content {
       float: left;
-      width: 70%;
-      border: 1px solid #000;
-      margin: 3px;
+      width: auto;
+padding-left:100px;
+      margin-left:5px;
   }
   h2 {
       color: #3498db;
   }
-  .bojeTeksta {
-      color: #3498db;
-  }
+
   #showblock {
     height: 0px;
       display: none;
 }
   #showblock:checked + nav{
     
-    width:15%;
+    width:150px;
       color: rebeccapurple;
 }
 
   nav a {
  
    display:block;
-    padding:10px;
+    padding:3px;
       color: #3498db;
       text-decoration: none;
      
@@ -136,12 +73,16 @@ header {
 }
  
 nav a.active {
-    padding: 5px;
+   
     color: #f1c40f;
   cursor: default;
     font-weight: bold;
 }
 
+nav a span {
+  display: initial !important;
+  padding-right: 10px;
+}
 
 
 @media screen and (max-width: 768px) {
