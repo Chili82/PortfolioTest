@@ -61,7 +61,11 @@ import {productList} from './portfolio.service';
         <label>ISIN</label>
         </div>
         <div class="classModalInput">
-        <input type="text" class="form-control" id="isin" required [ngModel]="isin" name="isin">
+        <div style="width:80%;float:left">
+        <input type="text" class="form-control" id="isin" required [ngModel]="isin" name="isin"></div>
+        <div style="width:15%;float:left;padding-left:10px">
+        <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-info" autocomplete="off">L</button>
+        </div>
         </div>
 </div>
       </div>
