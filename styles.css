@@ -48,6 +48,21 @@ padding-left:10px;
       color: #3498db;
   }
 
+  .classModalLabel{
+  margin-bottom: 5px;
+  float: left;
+  width:30%;
+}
+.classModalInput{
+  margin-bottom: 5px;
+  float: left;
+  width:70%;
+}
+
+.classModalRow{
+  clear: both;
+  overflow: auto;
+}
   #showblock {
     height: 0px;
       display: none;
@@ -127,6 +142,7 @@ thead {
 .table-bordered > tbody > tr > td,
 .table-bordered > tfoot > tr > td {
   border: 1px solid #dddddd;
+  cursor: pointer;
 }
 .table-bordered > thead > tr > th,
 .table-bordered > thead > tr > td {

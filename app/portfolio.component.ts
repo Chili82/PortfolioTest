@@ -26,7 +26,7 @@ import {productList} from './portfolio.service';
                <th>PnL</th>
             </thead>
             <tbody>
-               <tr *ngFor="let item of items">
+               <tr *ngFor="let item of items; let i=index" (click)="setClickedRow(i,item)" [class.active]="i == selectedRow" data-toggle="modal" data-target="#myModal">
                   <td>{{item.security}}</td>
                   <td>{{item.ISIN}}</td>
                   <td>{{item.position}}</td>
@@ -39,26 +39,72 @@ import {productList} from './portfolio.service';
          </table>
          </div>
          </div>
-  
+            <!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{security}}</h4>
+      </div>
+      <div class="modal-body" >
+<div class="classModalRow">
+      <div class="classModalLabel">
+      <label>Instrument ID</label>
+      </div>
+      <div class="classModalInput">
+        <input type="text" class="form-control" id="security" required [ngModel]="security" name="security">
+        </div>
+</div>
+<div class="classModalRow">
+        <div class="classModalLabel">
+        <label>ISIN</label>
+        </div>
+        <div class="classModalInput">
+        <input type="text" class="form-control" id="isin" required [ngModel]="isin" name="isin">
+        </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 `
 })
 
 export class PortfolioComponent {
 
+    selectedRow:Number;
+    items : Portfolio[];
 
-items : Portfolio[];
-inputName : string = '';
-y : number;
-constructor( ){
+    inputName : string = '';
+    y : number;
+
+    secyrity:string;
+    isin:any;
+    constructor( ){
         
-         this.items = productList;
+        this.items = productList;
        
    };
-computeValue(x:any, y:any){
+   setClickedRow = function(index:any,red:Portfolio){
+            this.selectedRow = index;
+
+            this.isin = red.ISIN;
+            this.security = red.security;
+            
+        }
+
+    computeValue(x:any, y:any){
     
     var z = x*y;
     return z.toFixed(3);
-}
+    }
+
+
 
 computePnl(x:any, y:any, z:any){
     

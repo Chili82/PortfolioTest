@@ -13,7 +13,7 @@ import { Component } from '@angular/core';
                         <div style="float:left;width:25%;padding-left:5px">
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span> User
                         </div>
-                        <div style="float:left;width:60%;text-align:right;cursor:pointer" data-toggle="modal" data-target="#myModal">
+                        <div style="float:left;width:60%;text-align:right;cursor:pointer" data-toggle="modal" data-target="#myModal1">
                         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
                         </div>
                       </div>
@@ -34,7 +34,7 @@ import { Component } from '@angular/core';
             </div>
 
             <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
